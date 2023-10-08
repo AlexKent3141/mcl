@@ -1,14 +1,17 @@
 
+set(test_names da_test bt_test)
 
-add_executable(da_test
-  "${CMAKE_CURRENT_SOURCE_DIR}/da_test.c")
+foreach(name ${test_names})
+  add_executable(${name}
+    "${CMAKE_CURRENT_SOURCE_DIR}/${name}.c")
 
-target_link_libraries(da_test
-  PRIVATE
-    mcl)
+  target_link_libraries(${name}
+    PRIVATE
+      mcl)
 
-set_target_properties(da_test
-  PROPERTIES
-    LANGUAGE C)
+  set_target_properties(${name}
+    PROPERTIES
+      LANGUAGE C)
 
-add_test(NAME TestDynamicArray COMMAND da_test)
+  add_test(NAME ${name} COMMAND ${name})
+endforeach()
