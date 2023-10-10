@@ -33,14 +33,14 @@ MCL_BT(data, data_cmp)
 int main()
 {
   struct mcl_bt_data* bt = NULL;
-  struct mcl_da_data* da = mcl_da_create_data();
+  struct mcl_da_data* da = NULL;
   int n;
 
   /* First create all of the data we're interested in. */
   for (n = 0; n < TEST_TARGET; n++)
   {
     data d = { n, (float)n / 2 };
-    mcl_da_push_back_data(da, d);
+    da = mcl_da_push_back_data(da, d);
   }
 
   /* Insert the data into a binary tree. */
