@@ -1,5 +1,5 @@
 
-set(test_names da_test bt_test)
+set(test_names da_test bt_test pq_test)
 
 foreach(name ${test_names})
   add_executable(${name}
@@ -12,6 +12,10 @@ foreach(name ${test_names})
   set_target_properties(${name}
     PROPERTIES
       LANGUAGE C)
+
+  target_compile_options(${name}
+    PRIVATE
+      -g)
 
   add_test(NAME ${name} COMMAND ${name})
 endforeach()

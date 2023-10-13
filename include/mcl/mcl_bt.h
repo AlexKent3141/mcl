@@ -48,7 +48,7 @@ struct mcl_bt_##T* mcl_bt_insert_##T(struct mcl_bt_##T* n, T val) \
 { \
   if (!n) \
   { \
-    struct mcl_bt_##T* n = malloc(sizeof(struct mcl_bt_##T)); \
+    n = malloc(sizeof(struct mcl_bt_##T)); \
     n->left = NULL; \
     n->right = NULL; \
     n->val = val; \
