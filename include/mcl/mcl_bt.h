@@ -130,6 +130,12 @@ int mcl_bt_contains_##T(struct mcl_bt_##T* const n, T val) \
   if (c == 0) return 1; \
   if (c < 0) return mcl_bt_contains_##T(n->left, val); \
   return mcl_bt_contains_##T(n->right, val); \
+} \
+\
+int mcl_bt_size_##T(struct mcl_bt_##T* const n) \
+{ \
+  if (n == NULL) return 0; \
+  return 1 + mcl_bt_size_##T(n->left) + mcl_bt_size_##T(n->right); \
 }
 
 #endif /* __MCL_BT_INCLUDED__ */
