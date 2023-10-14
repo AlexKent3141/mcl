@@ -33,7 +33,7 @@ struct mcl_da_##T* mcl_da_push_back_##T(struct mcl_da_##T* da, T val) \
   return da; \
 } \
 \
-struct mcl_da_##T* mcl_da_pop_back(struct mcl_da_##T* const da) \
+struct mcl_da_##T* mcl_da_pop_back_##T(struct mcl_da_##T* const da) \
 { \
   assert(da && da->size > 0); \
   da->size--; \
