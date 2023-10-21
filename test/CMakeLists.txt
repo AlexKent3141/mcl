@@ -1,5 +1,5 @@
 
-set(test_names da_test bt_test pq_test)
+set(test_names da_test bt_test pq_test ll_test)
 
 foreach(name ${test_names})
   add_executable(${name}
